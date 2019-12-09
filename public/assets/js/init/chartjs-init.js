@@ -177,7 +177,7 @@
 
 
     //line chart
-    var ctx = document.getElementById( "lineChart" );
+  /*  var ctx = document.getElementById( "lineChart" );
     ctx.height = 150;
     var myChart = new Chart( ctx, {
         type: 'line',
@@ -213,7 +213,7 @@
             }
 
         }
-    } );
+    } ); */
 
 
     //bar chart
