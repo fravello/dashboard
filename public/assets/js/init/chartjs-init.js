@@ -253,7 +253,7 @@
 
     //radar chart
     var ctx = document.getElementById( "radarChart" );
-    ctx.height = 160;
+    ctx.height = 150;
     var myChart = new Chart( ctx, {
         type: 'radar',
         data: {
