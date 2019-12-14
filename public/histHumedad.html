@@ -81,13 +81,13 @@
                         
                         <!-- HISTORIAL -->
                         <li class="menu-title">Historial</li><!-- /.menu-title -->
-                        <li class="active">
+                        <li >
                             <a href="histAperCier.html"><i class="menu-icon ti-unlock"></i>Apertura/Cierra</a>
                         </li>
-                        <li>
+                        <li >
                             <a href="histGases.html"><i class="menu-icon ti-alert"></i>Gases</a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="histHumedad.html"><i class="menu-icon ti-bar-chart"></i>Humedad</a>
                         </li>
                         <li>
@@ -120,8 +120,8 @@
             <div class="container">
                 <div class="card-body card-block">
                     <div >
-                        <h1><strong>Historial de Aperturas/Cierres</strong></h1>
-                        <p>Formulario de consulta por rango de fechas y tipos para la informacion del sensor de Aperturas/Cierres</p>
+                        <h1><strong>Historial de Detección de Humedad</strong></h1>
+                        <p>Formulario de consulta por rango de fechas y rango de valores para la informacion del sensor de Humedad</p>
                     </div>
                 </div>
             </div>
@@ -159,28 +159,22 @@
                                         </div>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col-12 col-md-2" style="text-align: center;">
-                                            <label for="todos" class=" form-control-label">Todos</label>
+                                        <div class="col-12 col-md-3" style="text-align: center;">
+                                            <label for="Detectados" class=" form-control-label">Valor Inicial</label>
                                         </div>
-                                        <div class="col-12 col-md-2">
+                                        <div class="col-12 col-md-3">
                                             <div class="input-group">
-                                                <input type="radio" value="todos" name="options" class="form-control" checked>
+                                                <input type="number" value="apertura" name="options"  class="form-control">
+                                                <div class="input-group-addon"><i class="fa fa-unsorted"></i></div>
                                             </div>
                                         </div>
-                                        <div class="col-12 col-md-2" style="text-align: center;">
-                                            <label for="apertura" class=" form-control-label">Aperturas</label>
+                                        <div class="col-12 col-md-3" style="text-align: center;">
+                                            <label for="NoDetectados" class=" form-control-label">Valor Término</label>
                                         </div>
-                                        <div class="col-12 col-md-2">
+                                        <div class="col-12 col-md-3">
                                             <div class="input-group">
-                                                <input type="radio" value="apertura" name="options"  class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-2" style="text-align: center;">
-                                            <label for="cierre" class=" form-control-label">Cierres</label>
-                                        </div>
-                                        <div class="col-12 col-md-2">
-                                            <div class="input-group">
-                                                <input type="radio" value="cierre" name="options"  class="form-control">
+                                                <input type="number" value="cierre" name="options"  class="form-control">
+                                                <div class="input-group-addon"><i class="fa fa-unsorted"></i></div>
                                             </div>
                                         </div>
                                     </div>
