@@ -135,7 +135,7 @@
             <div class="animated fadeIn">
                 
                 <!-- Widgets  -->
-                <div class="row">
+                <div class="row" style="display: none;">
                     <div class="col-lg-3 col-md-6">
                         <div class="card">
                             <div class="card-body">
@@ -210,42 +210,49 @@
                 </div>
                 <!-- /Widgets -->
 
+                <!-- Graphs -->
                 <div class="row">
+
                     <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="mb-3">Apertura / Cierre</h4>
-                                    <canvas id="sales-chart"></canvas>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Apertura / Cierre</h4>
+                                <div style="text-align: center;">
+                                    <img src="images/lock-256.png" alt="" id="imgLockUnlock">
                                 </div>
                             </div>
-                        </div><!-- /# column -->
-    
-                        <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="mb-3">Gases</h4>
-                                    <canvas id="team-chart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Gases</h4>
+                                <div style="text-align: center;">
+                                    <img src="images/alert-green-256.png" alt="" id="imgGas">
                                 </div>
                             </div>
-                        </div><!-- /# column -->
-    
-                        <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="mb-3">Humedad</h4>
-                                    <canvas id="barChart"></canvas>
-                                </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Gráfico Humedad</h4>
+                                <canvas id="Hum-chart"></canvas>
                             </div>
-                        </div><!-- /# column -->
-    
-                        <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="mb-3">Temperatura</h4>
-                                    <canvas id="radarChart"></canvas>
-                                </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Gráfico de Temperatura</h4>
+                                <canvas id="Temp-chart"></canvas>
                             </div>
-                        </div><!-- /# column -->
+                        </div>
+                    </div><!-- /# column -->
+
                 </div><!-- /# row -->
 
             </div>
@@ -280,12 +287,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="assets/js/main.js"></script>
+
     <!--  Chart js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
-    <script src="assets/js/init/chartjs-init.js"></script>
-    <!--Flot Chart-->
-    <script src="https://cdn.jsdelivr.net/npm/jquery.flot@0.8.3/jquery.flot.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
     
     <!-- socketio -->
     <script  src="/socket.io/socket.io.js" charset="utf-8"></script>
@@ -295,7 +299,134 @@
         const socket = io();
         socket.on('mqtt_dash', function(data){
             console.log(data);
+            addData(data);
         });
+
+        function addData(data){
+            var myObj = JSON.parse(data.payload);
+
+            // Aper / Cier
+            if(myObj.sensor == 'aper'){
+
+                if(myObj.value == '0'){
+                    document.getElementById("imgLockUnlock").src='images/lock-256.png';
+                }else{
+                    document.getElementById("imgLockUnlock").src='images/unlock-256.png';
+                }
+            }
+            // Gases
+            if(myObj.sensor == 'gas'){
+
+                if(myObj.value == '0'){
+                    document.getElementById("imgGas").src='images/alert-green-256.png';
+                }else{
+                    document.getElementById("imgGas").src='images/alert-red-256.png';
+                }
+            }
+            
+            // Temp-Chart
+            if(myObj.sensor == 'tmp'){
+                var date = new Date(data.date);
+                var hours = date.getHours();
+                var minutes = "0" + date.getMinutes();
+                var seconds = "0" + date.getSeconds();
+                var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+
+                tempChart.data.labels.push(formattedTime);
+                tempChart.data.labels.splice(0, 1);
+                tempChart.data.datasets[0].data.splice(0, 1);
+                tempChart.data.datasets[0].data.push(myObj.value); 
+                tempChart.update();
+            }
+
+            // Hum-Chart
+            if(myObj.sensor == 'hum'){
+                var date = new Date(data.date);
+                var hours = date.getHours();
+                var minutes = "0" + date.getMinutes();
+                var seconds = "0" + date.getSeconds();
+                var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+
+                humChart.data.labels.push(formattedTime);
+                humChart.data.labels.splice(0, 1);
+                humChart.data.datasets[0].data.splice(0, 1);
+                humChart.data.datasets[0].data.push(myObj.value); 
+                humChart.update();
+            }
+        }
+
+        // Temp-Chart
+        var canvTempChar = document.getElementById('Temp-chart');
+        var dataTempChart = {
+            labels: ["0", "0", "0", "0", "0", "0"],
+            datasets: [
+                {
+                    label: "Temperatura",
+                    fill: false,
+                    lineTension: 0.1,
+                    backgroundColor: "rgba(75,192,192,0.4)",
+                    borderColor: "rgba(75,192,192,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(75,192,192,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 5,
+                    pointHitRadius: 10,
+                    data: [0, 0, 0, 0, 0, 0]
+                }
+            ]
+        };
+        var optTempChart = {
+            showLines: true
+        };
+        var tempChart = Chart.Line(canvTempChar,{
+            data:dataTempChart,
+            options:optTempChart
+        });
+
+        // Hum-Chart
+        var canvHumChart = document.getElementById('Hum-chart');
+        var dataHumChart = {
+            labels: ["0", "0", "0", "0", "0", "0"],
+            datasets: [
+                {
+                    label: "Humedad",
+                    fill: false,
+                    lineTension: 0.1,
+                    backgroundColor: "rgba(75,192,192,0.4)",
+                    borderColor: "rgba(75,192,192,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(75,192,192,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 5,
+                    pointHitRadius: 10,
+                    data: [0, 0, 0, 0, 0, 0]
+                }
+            ]
+        };
+        var optHumChart = {
+            showLines: true
+        };
+        var humChart = Chart.Bar(canvHumChart,{
+            data:dataHumChart,
+            options:optHumChart
+        });
+
         
     </script>
 
