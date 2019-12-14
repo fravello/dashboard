@@ -75,13 +75,13 @@
                         
                         <!-- DASHBOARD -->
                         <li class="menu-title">Dashboard</li>
-                        <li class="active">
+                        <li >
                             <a href="dashboard.html"><i class="menu-icon fa fa-dashboard"></i>Dashboard</a>
                         </li>
                         
                         <!-- HISTORIAL -->
                         <li class="menu-title">Historial</li><!-- /.menu-title -->
-                        <li>
+                        <li class="active">
                             <a href="histAperCier.html"><i class="menu-icon ti-unlock"></i>Apertura/Cierra</a>
                         </li>
                         <li>
@@ -130,7 +130,7 @@
                 <div class="card-body card-block">
                     <div >
                         <h1><strong>Historial de Aperturas/Cierres</strong></h1>
-                        <p>Formulario de consulta por rango de fechas para la informacion del sensor de Aperturas/Cierres</p>
+                        <p>Formulario de consulta por rango de fechas y tipos para la informacion del sensor de Aperturas/Cierres</p>
                     </div>
                 </div>
             </div>
@@ -138,39 +138,74 @@
             <div class="content">
 
                 <!-- Animated -->
-                <div class="animated fadeIn">
-
-                    <div class="card">
-                        <div class="card-header">
-                            <strong>Formulario de Consulta</strong>
+                <div class="animated fadeIn" style="text-align: center;">
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="card col-8">
+                            <div class="card-header">
+                                <strong>Formulario de Consulta</strong>
+                            </div>
+                            <div class="card-body card-block">
+                                <form class="form-horizontal">
+                                    <div class="row form-group">
+                                        <div class="col-12 col-md-3" style="text-align: center;">
+                                            <label for="fchInicio" class=" form-control-label">Fecha de Inicio</label>
+                                        </div>
+                                        <div class="col-12 col-md-3">
+                                            <div class="input-group">
+                                                <input type="date" id="fchInicio" name="fchInicio" class="form-control">
+                                                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3" style="text-align: center;">
+                                            <label for="fchTermino" class=" form-control-label">Fecha de Termino</label>
+                                        </div>
+                                        <div class="col-12 col-md-3">
+                                            <div class="input-group">
+                                                <input type="date" id="fchTermino" name="fchTermino"  class="form-control">
+                                                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-12 col-md-2" style="text-align: center;">
+                                            <label for="todos" class=" form-control-label">Todos</label>
+                                        </div>
+                                        <div class="col-12 col-md-2">
+                                            <div class="input-group">
+                                                <input type="radio" value="todos" name="options" class="form-control" checked>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-2" style="text-align: center;">
+                                            <label for="apertura" class=" form-control-label">Aperturas</label>
+                                        </div>
+                                        <div class="col-12 col-md-2">
+                                            <div class="input-group">
+                                                <input type="radio" value="apertura" name="options"  class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-2" style="text-align: center;">
+                                            <label for="cierre" class=" form-control-label">Cierres</label>
+                                        </div>
+                                        <div class="col-12 col-md-2">
+                                            <div class="input-group">
+                                                <input type="radio" value="cierre" name="options"  class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row form-group">
+                                        <div class="col-12" style="text-align: right;">
+                                            <button id="payment-button" type="submit" class="btn btn-info btn-lg">
+                                                <i class="fa fa-check fa-lg"></i>&nbsp;
+                                                <span id="payment-button-amount">Consultar</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        <div class="card-body card-block">
-                            <form class="form-horizontal">
-                                <div class="row form-group">
-                                    <div class="col col-md-3" style="text-align: center;">
-                                        <label for="hf-email" class=" form-control-label">Fecha de Inicio</label>
-                                    </div>
-                                    <div class="col-12 col-md-3">
-                                        <input type="date" id="fchDesde" name="fchDesde" class="form-control">
-                                    </div>
-                                    <div class="col col-md-3" style="text-align: center;">
-                                        <label for="hf-password" class=" form-control-label">Fecha de Termino</label>
-                                    </div>
-                                    <div class="col-12 col-md-3">
-                                        <input type="date" id="fchHasta" name="fchHasta"  class="form-control">
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row form-group">
-                                    <div class="col-12" style="text-align: right;">
-                                        <button id="payment-button" type="submit" class="btn btn-info btn-lg">
-                                            <i class="fa fa-check fa-lg"></i>&nbsp;
-                                            <span id="payment-button-amount">Consultar</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                        <div class="col-2"></div>
                     </div>
 
                     <div class="row">
@@ -184,6 +219,7 @@
                                         <thead class="thead-dark">
                                             <tr>
                                                 <th scope="col">#</th>
+                                                <th scope="col">Sensor</th>
                                                 <th scope="col">Topico</th>
                                                 <th scope="col">Fecha</th>
                                                 <th scope="col">valor</th>
