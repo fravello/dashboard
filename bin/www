@@ -29,13 +29,6 @@ app.set('port', port);
 var server = http.createServer(app);
 const io = socketIO.listen(server);
 
-
-/**
- * 
- * 
- * 
- */
-
  // mqtt connection
 var mqttUri  = 'mqtt://' + config.mqtt.hostname + ':' + config.mqtt.port;
 var client = mqtt.connect(mqttUri);
@@ -70,7 +63,6 @@ db.once('open', function() {
       console.log("saved to mqtt_dash collection.");
     });
   }); 
-  
 });
 
 /**

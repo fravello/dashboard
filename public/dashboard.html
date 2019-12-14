@@ -3,432 +3,430 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dashboard</title>
-    <meta name="description" content="Ela Admin - HTML5 Admin Template">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dashboard</title>
+        <meta name="description" content="Ela Admin - HTML5 Admin Template">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
-    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+        <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
+        <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
-    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-    <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+        <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+        <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
 
-   <style>
-    #weatherWidget .currentDesc {
-        color: #ffffff!important;
-    }
-        .traffic-chart {
-            min-height: 335px;
+    <style>
+        #weatherWidget .currentDesc {
+            color: #ffffff!important;
         }
-        #flotPie1  {
-            height: 150px;
-        }
-        #flotPie1 td {
-            padding:3px;
-        }
-        #flotPie1 table {
-            top: 20px!important;
-            right: -10px!important;
-        }
-        .chart-container {
-            display: table;
-            min-width: 270px ;
-            text-align: left;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-        #flotLine5  {
-             height: 105px;
-        }
+            .traffic-chart {
+                min-height: 335px;
+            }
+            #flotPie1  {
+                height: 150px;
+            }
+            #flotPie1 td {
+                padding:3px;
+            }
+            #flotPie1 table {
+                top: 20px!important;
+                right: -10px!important;
+            }
+            .chart-container {
+                display: table;
+                min-width: 270px ;
+                text-align: left;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            #flotLine5  {
+                height: 105px;
+            }
 
-        #flotBarChart {
-            height: 150px;
-        }
-        #cellPaiChart{
-            height: 160px;
-        }
+            #flotBarChart {
+                height: 150px;
+            }
+            #cellPaiChart{
+                height: 160px;
+            }
 
-    </style>
-</head>
+        </style>
+    </head>
 
-<body>
+    <body>
 
-    <!-- Left Panel -->
-    <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-            <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    
-                    <!-- DASHBOARD -->
-                    <li class="menu-title">Dashboard</li>
-                    <li class="active">
-                        <a href="dashboard.html"><i class="menu-icon fa fa-dashboard"></i>Dashboard</a>
-                    </li>
-                    
-                    <!-- HISTORIAL -->
-                    <li class="menu-title">Historial</li><!-- /.menu-title -->
-                    <li>
-                        <a href="#"><i class="menu-icon ti-unlock"></i>Apertura/Cierra</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="menu-icon ti-alert"></i>Gases</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="menu-icon ti-bar-chart"></i>Humedad</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="menu-icon ti-stats-up"></i>Temperatura</a>
-                    </li>
+        <!-- Left Panel -->
+        <aside id="left-panel" class="left-panel">
+            <nav class="navbar navbar-expand-sm navbar-default">
+                <div id="main-menu" class="main-menu collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        
+                        <!-- DASHBOARD -->
+                        <li class="menu-title">Dashboard</li>
+                        <li class="active">
+                            <a href="dashboard.html"><i class="menu-icon fa fa-dashboard"></i>Dashboard</a>
+                        </li>
+                        
+                        <!-- HISTORIAL -->
+                        <li class="menu-title">Historial</li><!-- /.menu-title -->
+                        <li>
+                            <a href="histAperCier.html"><i class="menu-icon ti-unlock"></i>Apertura/Cierra</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="menu-icon ti-alert"></i>Gases</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="menu-icon ti-bar-chart"></i>Humedad</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="menu-icon ti-stats-up"></i>Temperatura</a>
+                        </li>
 
-                    <!-- REPRTES -->
-                    <li class="menu-title">Reportes</li><!-- /.menu-title -->
-                    <li>
-                        <a href="#"><i class="menu-icon ti-file"></i>Reporte 1</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="menu-icon ti-file"></i>Reporte 2</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="menu-icon ti-file"></i>Reporte 3</a>
-                    </li>
-                    
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </nav>
-    </aside>
-    <!-- /#left-panel -->
+                        <!-- REPRTES -->
+                        <li class="menu-title">Reportes</li><!-- /.menu-title -->
+                        <li>
+                            <a href="#"><i class="menu-icon ti-file"></i>Reporte 1</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="menu-icon ti-file"></i>Reporte 2</a>
+                        </li>
+                        
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+        </aside>
+        <!-- /#left-panel -->
 
-    <!-- Right Panel -->
-    <div id="right-panel" class="right-panel">
+        <!-- Right Panel -->
+        <div id="right-panel" class="right-panel">
 
-        <!-- Header-->
-        <header id="header" class="header">
-            <div class="top-left">
-                <div class="navbar-header" style="height: 54px;">
-                    <a class="navbar-brand" href="dashboard.html" style="width: 190px;"><img src="images/logo.png" alt="Logo"></a>
-                    <a class="navbar-brand hidden" href="dashboard.html" style="width: 190px;"><img src="images/logo2.png" alt="Logo"></a>
-                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
-                </div>
-            </div>
-        </header>
-        <!-- /#header -->
-
-        <!-- Content -->
-        <div class="content">
-
-            <!-- Animated -->
-            <div class="animated fadeIn">
-                
-                <!-- Widgets  -->
-                <div class="row" style="display: none;">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="stat-widget-five">
-                                    <div class="stat-icon dib flat-color-1">
-                                        <i class="ti-unlock"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">23</span></div>
-                                            <div class="stat-heading">Apertura / Cierre</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="stat-widget-five">
-                                    <div class="stat-icon dib flat-color-2">
-                                        <i class="ti-alert"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">35</span></div>
-                                            <div class="stat-heading">Gases</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="stat-widget-five">
-                                    <div class="stat-icon dib flat-color-3">
-                                        <i class="ti-bar-chart"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">9</span></div>
-                                            <div class="stat-heading">Humedad</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="stat-widget-five">
-                                    <div class="stat-icon dib flat-color-4">
-                                        <i class="ti-stats-up"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">29</span></div>
-                                            <div class="stat-heading">Temperaturas</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Header-->
+            <header id="header" class="header">
+                <div class="top-left">
+                    <div class="navbar-header" style="height: 54px;">
+                        <a class="navbar-brand" href="dashboard.html" style="width: 190px;"><img src="images/logo.png" alt="Logo"></a>
+                        <a class="navbar-brand hidden" href="dashboard.html" style="width: 190px;"><img src="images/logo2.png" alt="Logo"></a>
+                        <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                     </div>
                 </div>
-                <!-- /Widgets -->
+            </header>
+            <!-- /#header -->
 
-                <!-- Graphs -->
-                <div class="row">
+            <!-- Content -->
+            <div class="content">
 
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="mb-3">Apertura / Cierre</h4>
-                                <div style="text-align: center;">
-                                    <img src="images/lock-256.png" alt="" id="imgLockUnlock">
+                <!-- Animated -->
+                <div class="animated fadeIn">
+                    
+                    <!-- Widgets  -->
+                    <div class="row" >
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="stat-widget-five">
+                                        <div class="stat-icon dib flat-color-1">
+                                            <i class="ti-unlock"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="text-left dib">
+                                                <div class="stat-text"><span class="count">23</span></div>
+                                                <div class="stat-heading">Alertas Apertura / Cierre</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="stat-widget-five">
+                                        <div class="stat-icon dib flat-color-2">
+                                            <i class="ti-alert"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="text-left dib">
+                                                <div class="stat-text"><span class="count">35</span></div>
+                                                <div class="stat-heading">Alertas Gases</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="stat-widget-five">
+                                        <div class="stat-icon dib flat-color-3">
+                                            <i class="ti-bar-chart"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="text-left dib">
+                                                <div class="stat-text"><span class="count">9</span></div>
+                                                <div class="stat-heading">Alertas Humedad</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="stat-widget-five">
+                                        <div class="stat-icon dib flat-color-4">
+                                            <i class="ti-stats-up"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="text-left dib">
+                                                <div class="stat-text"><span class="count">29</span></div>
+                                                <div class="stat-heading">Alertas Temperaturas</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- /Widgets -->
 
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="mb-3">Gases</h4>
-                                <div style="text-align: center;">
-                                    <img src="images/alert-green-256.png" alt="" id="imgGas">
+                    <!-- Graphs -->
+                    <div class="row">
+
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mb-3">Apertura / Cierre</h4>
+                                    <div style="text-align: center;">
+                                        <img src="images/lock-256.png" alt="" id="imgLockUnlock">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="mb-3">Gráfico Humedad</h4>
-                                <canvas id="Hum-chart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="mb-3">Gráfico de Temperatura</h4>
-                                <canvas id="Temp-chart"></canvas>
-                            </div>
-                        </div>
-                    </div><!-- /# column -->
 
-                </div><!-- /# row -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mb-3">Gases</h4>
+                                    <div style="text-align: center;">
+                                        <img src="images/alert-green-256.png" alt="" id="imgGas">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mb-3">Gráfico Humedad</h4>
+                                    <canvas id="Hum-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mb-3">Gráfico de Temperatura</h4>
+                                    <canvas id="Temp-chart"></canvas>
+                                </div>
+                            </div>
+                        </div><!-- /# column -->
+
+                    </div><!-- /# row -->
+
+                </div>
+                <!-- .animated -->
 
             </div>
-            <!-- .animated -->
+            <!-- /.content -->
+
+            <div class="clearfix"></div>
+            
+            <!-- Footer -->
+            <footer class="site-footer">
+                <div class="footer-inner bg-white">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            Copyright &copy; 2018-2020 Nueronal Group
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            Designed by <a href="https://neuronalgroup.com">Neuronal Group</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- /.site-footer -->
 
         </div>
-        <!-- /.content -->
+        <!-- /#right-panel -->
 
-        <div class="clearfix"></div>
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <!--  Chart js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
         
-        <!-- Footer -->
-        <footer class="site-footer">
-            <div class="footer-inner bg-white">
-                <div class="row">
-                    <div class="col-sm-6">
-                        Copyright &copy; 2018-2020 Nueronal Group
-                    </div>
-                    <div class="col-sm-6 text-right">
-                        Designed by <a href="https://neuronalgroup.com">Neuronal Group</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- /.site-footer -->
+        <!-- socketio -->
+        <script  src="/socket.io/socket.io.js" charset="utf-8"></script>
 
-    </div>
-    <!-- /#right-panel -->
-
-      <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
-    <script src="assets/js/main.js"></script>
-
-    <!--  Chart js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
-    
-    <!-- socketio -->
-    <script  src="/socket.io/socket.io.js" charset="utf-8"></script>
-
-    <script>
-        
-        const socket = io();
-        socket.on('mqtt_dash', function(data){
-            console.log(data);
-            addData(data);
-        });
-
-        function addData(data){
-            var myObj = JSON.parse(data.payload);
-
-            // Aper / Cier
-            if(myObj.sensor == 'aper'){
-
-                if(myObj.value == '0'){
-                    document.getElementById("imgLockUnlock").src='images/lock-256.png';
-                }else{
-                    document.getElementById("imgLockUnlock").src='images/unlock-256.png';
-                }
-            }
-            // Gases
-            if(myObj.sensor == 'gas'){
-
-                if(myObj.value == '0'){
-                    document.getElementById("imgGas").src='images/alert-green-256.png';
-                }else{
-                    document.getElementById("imgGas").src='images/alert-red-256.png';
-                }
-            }
+        <!-- Charts Scripts -->
+        <script>
             
-            // Temp-Chart
-            if(myObj.sensor == 'tmp'){
-                var date = new Date(data.date);
-                var hours = date.getHours();
-                var minutes = "0" + date.getMinutes();
-                var seconds = "0" + date.getSeconds();
-                var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+            const socket = io();
+            socket.on('mqtt_dash', function(data){
+                console.log(data);
+                addData(data);
+            });
 
-                tempChart.data.labels.push(formattedTime);
-                tempChart.data.labels.splice(0, 1);
-                tempChart.data.datasets[0].data.splice(0, 1);
-                tempChart.data.datasets[0].data.push(myObj.value); 
-                tempChart.update();
+            function addData(data){
+                var myObj = JSON.parse(data.payload);
+
+                // Aper / Cier
+                if(myObj.sensor == 'aper'){
+
+                    if(myObj.value == '0'){
+                        document.getElementById("imgLockUnlock").src='images/lock-256.png';
+                    }else{
+                        document.getElementById("imgLockUnlock").src='images/unlock-256.png';
+                    }
+                }
+                // Gases
+                if(myObj.sensor == 'gas'){
+
+                    if(myObj.value == '0'){
+                        document.getElementById("imgGas").src='images/alert-green-256.png';
+                    }else{
+                        document.getElementById("imgGas").src='images/alert-red-256.png';
+                    }
+                }
+                
+                // Temp-Chart
+                if(myObj.sensor == 'tmp'){
+                    var date = new Date(data.date);
+                    var hours = date.getHours();
+                    var minutes = "0" + date.getMinutes();
+                    var seconds = "0" + date.getSeconds();
+                    var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+
+                    tempChart.data.labels.push(formattedTime);
+                    tempChart.data.labels.splice(0, 1);
+                    tempChart.data.datasets[0].data.splice(0, 1);
+                    tempChart.data.datasets[0].data.push(myObj.value); 
+                    tempChart.update();
+                }
+
+                // Hum-Chart
+                if(myObj.sensor == 'hum'){
+                    var date = new Date(data.date);
+                    var hours = date.getHours();
+                    var minutes = "0" + date.getMinutes();
+                    var seconds = "0" + date.getSeconds();
+                    var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+
+                    humChart.data.labels.push(formattedTime);
+                    humChart.data.labels.splice(0, 1);
+                    humChart.data.datasets[0].data.splice(0, 1);
+                    humChart.data.datasets[0].data.push(myObj.value); 
+                    humChart.update();
+                }
             }
+
+            // Temp-Chart
+            var canvTempChar = document.getElementById('Temp-chart');
+            var dataTempChart = {
+                labels: ["0", "0", "0", "0", "0", "0"],
+                datasets: [
+                    {
+                        label: "Temperatura",
+                        fill: false,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(75,192,192,0.4)",
+                        borderColor: "rgba(75,192,192,1)",
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: "rgba(75,192,192,1)",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                        pointHoverBorderColor: "rgba(220,220,220,1)",
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 5,
+                        pointHitRadius: 10,
+                        data: [0, 0, 0, 0, 0, 0]
+                    }
+                ]
+            };
+            var optTempChart = {
+                showLines: true
+            };
+            var tempChart = Chart.Line(canvTempChar,{
+                data:dataTempChart,
+                options:optTempChart
+            });
 
             // Hum-Chart
-            if(myObj.sensor == 'hum'){
-                var date = new Date(data.date);
-                var hours = date.getHours();
-                var minutes = "0" + date.getMinutes();
-                var seconds = "0" + date.getSeconds();
-                var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+            var canvHumChart = document.getElementById('Hum-chart');
+            var dataHumChart = {
+                labels: ["0", "0", "0", "0", "0", "0"],
+                datasets: [
+                    {
+                        label: "Humedad",
+                        fill: false,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(75,192,192,0.4)",
+                        borderColor: "rgba(75,192,192,1)",
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: "rgba(75,192,192,1)",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                        pointHoverBorderColor: "rgba(220,220,220,1)",
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 5,
+                        pointHitRadius: 10,
+                        data: [0, 0, 0, 0, 0, 0]
+                    }
+                ]
+            };
+            var optHumChart = {
+                showLines: true
+            };
+            var humChart = Chart.Bar(canvHumChart,{
+                data:dataHumChart,
+                options:optHumChart
+            });
 
-                humChart.data.labels.push(formattedTime);
-                humChart.data.labels.splice(0, 1);
-                humChart.data.datasets[0].data.splice(0, 1);
-                humChart.data.datasets[0].data.push(myObj.value); 
-                humChart.update();
-            }
-        }
+            
+        </script>
 
-        // Temp-Chart
-        var canvTempChar = document.getElementById('Temp-chart');
-        var dataTempChart = {
-            labels: ["0", "0", "0", "0", "0", "0"],
-            datasets: [
-                {
-                    label: "Temperatura",
-                    fill: false,
-                    lineTension: 0.1,
-                    backgroundColor: "rgba(75,192,192,0.4)",
-                    borderColor: "rgba(75,192,192,1)",
-                    borderCapStyle: 'butt',
-                    borderDash: [],
-                    borderDashOffset: 0.0,
-                    borderJoinStyle: 'miter',
-                    pointBorderColor: "rgba(75,192,192,1)",
-                    pointBackgroundColor: "#fff",
-                    pointBorderWidth: 1,
-                    pointHoverRadius: 5,
-                    pointHoverBackgroundColor: "rgba(75,192,192,1)",
-                    pointHoverBorderColor: "rgba(220,220,220,1)",
-                    pointHoverBorderWidth: 2,
-                    pointRadius: 5,
-                    pointHitRadius: 10,
-                    data: [0, 0, 0, 0, 0, 0]
-                }
-            ]
-        };
-        var optTempChart = {
-            showLines: true
-        };
-        var tempChart = Chart.Line(canvTempChar,{
-            data:dataTempChart,
-            options:optTempChart
-        });
-
-        // Hum-Chart
-        var canvHumChart = document.getElementById('Hum-chart');
-        var dataHumChart = {
-            labels: ["0", "0", "0", "0", "0", "0"],
-            datasets: [
-                {
-                    label: "Humedad",
-                    fill: false,
-                    lineTension: 0.1,
-                    backgroundColor: "rgba(75,192,192,0.4)",
-                    borderColor: "rgba(75,192,192,1)",
-                    borderCapStyle: 'butt',
-                    borderDash: [],
-                    borderDashOffset: 0.0,
-                    borderJoinStyle: 'miter',
-                    pointBorderColor: "rgba(75,192,192,1)",
-                    pointBackgroundColor: "#fff",
-                    pointBorderWidth: 1,
-                    pointHoverRadius: 5,
-                    pointHoverBackgroundColor: "rgba(75,192,192,1)",
-                    pointHoverBorderColor: "rgba(220,220,220,1)",
-                    pointHoverBorderWidth: 2,
-                    pointRadius: 5,
-                    pointHitRadius: 10,
-                    data: [0, 0, 0, 0, 0, 0]
-                }
-            ]
-        };
-        var optHumChart = {
-            showLines: true
-        };
-        var humChart = Chart.Bar(canvHumChart,{
-            data:dataHumChart,
-            options:optHumChart
-        });
-
-        
-    </script>
-
-</body>
+    </body>
 </html>
