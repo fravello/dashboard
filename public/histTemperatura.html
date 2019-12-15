@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
         <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+        <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
         <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
         <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
@@ -121,7 +122,7 @@
                 <div class="card-body card-block">
                     <div >
                         <h1><strong>Historial de Detección de Temperatura</strong></h1>
-                        <p>Formulario de consulta por rango de fechas y rango de valores para la informacion del sensor de Temperatura</p>
+                        <p>Formulario de consulta por rango de fechas para la informacion del sensor de Temperatura</p>
                     </div>
                 </div>
             </div>
@@ -137,7 +138,7 @@
                                 <strong>Formulario de Consulta</strong>
                             </div>
                             <div class="card-body card-block">
-                                <form class="form-horizontal">
+                                <form class="form-horizontal" method="POST" action="/getTemperatura" id="formTemp">
                                     <div class="row form-group">
                                         <div class="col-12 col-md-3" style="text-align: center;">
                                             <label for="fchInicio" class=" form-control-label">Fecha Inicio</label>
@@ -158,26 +159,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row form-group">
-                                        <div class="col-12 col-md-3" style="text-align: center;">
-                                            <label for="Detectados" class=" form-control-label">Valor Inicial</label>
-                                        </div>
-                                        <div class="col-12 col-md-3">
-                                            <div class="input-group">
-                                                <input type="number" value="apertura" name="options"  class="form-control">
-                                                <div class="input-group-addon"><i class="fa fa-unsorted"></i></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-3" style="text-align: center;">
-                                            <label for="NoDetectados" class=" form-control-label">Valor Término</label>
-                                        </div>
-                                        <div class="col-12 col-md-3">
-                                            <div class="input-group">
-                                                <input type="number" value="cierre" name="options"  class="form-control">
-                                                <div class="input-group-addon"><i class="fa fa-unsorted"></i></div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <br>
                                     <hr>
                                     <div class="row form-group">
                                         <div class="col-12" style="text-align: right;">
@@ -194,27 +176,30 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <strong class="card-title">Resultado de la consulta</strong>
+                                    <strong class="card-title">Resultados</strong>
                                 </div>
                                 <div class="card-body">
-                                    <table class="table">
-                                        <thead class="thead-dark">
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Sensor</th>
-                                                <th scope="col">Topico</th>
-                                                <th scope="col">Fecha</th>
-                                                <th scope="col">valor</th>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table id="bootstrap-data-table" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="bootstrap-data-table_info">
+                                        <thead>
+                                            <tr role="row">
+                                                <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 227px;">#</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 366px;">Sensor</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 167px;">Topic</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 132px;">Fecha</th>
+                                                <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 132px;">Valor</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            
-                                        </tbody>
+                                       
                                     </table>
                                 </div>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -248,9 +233,73 @@
         <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
         <script src="assets/js/main.js"></script>
 
-        <script>
+        <!-- DataTables js-->
+        <script src="assets/js/lib/data-table/datatables.min.js"></script>
+        <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+        <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+        <script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+        <script src="assets/js/lib/data-table/jszip.min.js"></script>
+        <script src="assets/js/lib/data-table/vfs_fonts.js"></script>
+        <script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
+        <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
+        <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
+        <!-- <script src="assets/js/init/datatables-init.js"></script> -->
 
-           
+        <script>
+            jQuery.noConflict();
+            jQuery(document).ready(function(){
+
+                jQuery("#formTemp").on('submit', function(e){
+                    e.preventDefault();
+                    var fchInicio = jQuery('#fchInicio').val();
+                    var fchTermino = jQuery('#fchTermino').val();
+
+                    var data = { 'fchInicio': fchInicio, 'fchTermino': fchTermino };
+
+                    jQuery.ajax({
+                        type: 'post',
+                        url: '/getTemperatura',
+                        data: data,
+                        dataType: 'text'
+                    })
+                    .done(function(data){
+
+                        var _data = JSON.parse(data);
+                        console.log(_data);
+
+                        var myRow = [];
+                        for (var i = 1; i <= _data.length; i++) {
+                            var myPayload = JSON.parse(_data[i-1].payload);
+                            var date = new Date( _data[i-1].date);
+                            var str = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " +  date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+
+                            myObj = {
+                                '#' : i,
+                                'Sensor': 'Temperatura',
+                                'Topic': _data[i-1].topic,
+                                'Fecha': str,
+                                'Valor': myPayload.value
+                            };
+                            myRow.push(myObj);
+                        }
+                        console.log(myRow);
+                        jQuery('#bootstrap-data-table').DataTable().destroy();
+                        jQuery('#bootstrap-data-table').DataTable({
+                            data : myRow,
+                            columns : [
+                                {data: "#"},
+                                {data: "Sensor"},
+                                {data: "Topic"},
+                                {data: "Fecha"},
+                                {data: "Valor"}
+                            ],
+                            buttons: [
+                                'copy', 'csv', 'excel', 'pdf', 'print'
+                            ]
+                        });
+                    });
+                });
+            });
 
             
             
