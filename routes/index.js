@@ -25,6 +25,38 @@ router.get('/dashboard', function(req, res, next) {
   res.sendFile(path.join(__dirname + '/../public/dashboard.html'))
 });
 
+router.post('/getAperCierr', async function(req, res, next) {
+
+  var fchInicio = req.body.fchInicio + ' 00:00:00';
+  var fchTermino = req.body.fchTermino + ' 23:59:59';
+
+  var result = await mqtt_dash.find({
+                          payload:{$regex: 'aper'},
+                          date: {
+                            $gte: fchInicio,
+                            $lt: fchTermino
+                          }}).sort({$natural:-1}); //.limit(20)
+
+  console.log(result);
+  res.send(result);
+});
+
+router.post('/getGases', async function(req, res, next) {
+
+  var fchInicio = req.body.fchInicio + ' 00:00:00';
+  var fchTermino = req.body.fchTermino + ' 23:59:59';
+
+  var result = await mqtt_dash.find({
+                          payload:{$regex: 'gas'},
+                          date: {
+                            $gte: fchInicio,
+                            $lt: fchTermino
+                          }}).sort({$natural:-1}); //.limit(20)
+
+  console.log(result);
+  res.send(result);
+});
+
 router.post('/getHumedad', async function(req, res, next) {
 
   var fchInicio = req.body.fchInicio + ' 00:00:00';
