@@ -138,7 +138,7 @@
                                 <strong>Formulario de Consulta</strong>
                             </div>
                             <div class="card-body card-block">
-                                <form class="form-horizontal" method="POST" action="/getTemperatura" id="formTemp">
+                                <form class="form-horizontal" method="POST" action="/getTemperatura" id="formConsulta">
                                     <div class="row form-group">
                                         <div class="col-12 col-md-3" style="text-align: center;">
                                             <label for="fchInicio" class=" form-control-label">Fecha Inicio</label>
@@ -150,7 +150,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-3" style="text-align: center;">
-                                            <label for="fchTermino" class=" form-control-label">Fecha Termino</label>
+                                            <label for="fchTermino" class=" form-control-label">Fecha Término</label>
                                         </div>
                                         <div class="col-12 col-md-3">
                                             <div class="input-group">
@@ -243,13 +243,13 @@
         <script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
         <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
         <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
-        <!-- <script src="assets/js/init/datatables-init.js"></script> -->
+        <!-- <script src="assets/js/lib/data-table/pdfmake.min.js"></script> -->
 
         <script>
-            jQuery.noConflict();
+
             jQuery(document).ready(function(){
 
-                jQuery("#formTemp").on('submit', function(e){
+                jQuery("#formConsulta").on('submit', function(e){
                     e.preventDefault();
                     var fchInicio = jQuery('#fchInicio').val();
                     var fchTermino = jQuery('#fchTermino').val();
@@ -286,23 +286,22 @@
                         jQuery('#bootstrap-data-table').DataTable().destroy();
                         jQuery('#bootstrap-data-table').DataTable({
                             data : myRow,
+                            dom: 'Bfrtip',
+                            buttons: [
+                                'print', 'csv', 'excel'
+                            ],
                             columns : [
                                 {data: "#"},
                                 {data: "Sensor"},
                                 {data: "Topic"},
                                 {data: "Fecha"},
                                 {data: "Valor"}
-                            ],
-                            buttons: [
-                                'copy', 'csv', 'excel', 'pdf', 'print'
                             ]
                         });
                     });
                 });
             });
 
-            
-            
         </script>
 
     </body>
